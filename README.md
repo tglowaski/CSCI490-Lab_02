@@ -20,8 +20,9 @@ This lab will introduce some basic features of calling an Intent to switch activ
 * Link each ImageView with one of the images as shown in the screenshot.png and position/size the ImageView widgets.
 
 ### Launch Second Activity
-* 
-* Replace all of the XML inside of res/layout/activity_main.xml with code from the view.xml file in the lab repository.
-* Create a virtual device (or use a real device if you are able) to run the lab on. This virtual device will need to have API 23 or greater.
-* AFter you have code running on a device properly, refactor "hard coded" strings to be read from res/values/strings.xml
+* Add a reference to your second Activity in the AndroidManifest file.
+* In your main Activity, create a **public static final int** that will represent your request code.
+* Inside an onClick() for your button launch the second Activity. You will need to create an Intent and call **startActivityForResult()**. Pass in the intent you created and the request code.
+* In your main Activity, you will need to @Override **protected void onActivityResult(int requestCode, int resultCode, Intent data)** and inside that block, grab the Layout like you would any other View item and call **setBackground(getDrawable(imageID))**
+* After you have code running on a device properly, refactor "hard coded" strings to be read from res/values/strings.xml
 * Share, commit, and push lab to your GitHub account
